@@ -10,23 +10,14 @@ public class Imovel {
     }
 
     public String getTipoImovel() {
-        if (tipoImovel == "") {
-            System.out.print("Não cadastrado.");
-        }
         return tipoImovel;
     }
 
     public String getEndereco() {
-        if (endereco == "") {
-            System.out.println("Sem endereço.");
-        }
         return endereco;
     }
 
     public int getMetrosQuadrados() {
-        if (metrosQuadrados == 0 ) {
-            System.out.println("Sem área.");
-        }
         return metrosQuadrados;
     }
 
@@ -53,4 +44,11 @@ public class Imovel {
             this.metrosQuadrados = metrosQuadrados;
         }
     }
+
+    public void mostrarInformacoes() {
+        System.out.println("Tipo do imóvel: " + tipoImovel);
+        System.out.println("Endereço: " + endereco);
+        System.out.println("Metros quadrados: " + metrosQuadrados);
+    }
 }
+
