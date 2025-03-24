@@ -1,24 +1,24 @@
 public class Corretor {
-    private String nome;
-    private int idade;
+    private String nomeCorretor;
+    private int idadeCorretor;
     private boolean terminouEnsinoMedio;
     private boolean diplomaTTI;
     private boolean registroCRECI;
 
-    public Corretor(String nome, int idade, boolean terminouEnsinoMedio, boolean diplomaTTI, boolean registroCRECI) {
-        this.nome = nome;
-        this.idade = idade;
+    public Corretor(String nomeCorretor, int idadeCorretor, boolean terminouEnsinoMedio, boolean diplomaTTI, boolean registroCRECI) {
+        this.nomeCorretor= nomeCorretor;
+        this.idadeCorretor = idadeCorretor;
         this.terminouEnsinoMedio = terminouEnsinoMedio;
         this.diplomaTTI = diplomaTTI;
         this.registroCRECI = registroCRECI;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeCorretor() {
+        return nomeCorretor;
     }
 
-    public int getIdade() {
-        return idade;
+    public int getIdadeCorretor() {
+        return idadeCorretor;
     }
     public boolean getTerminouEnsinoMedio() {
         return terminouEnsinoMedio;
@@ -32,12 +32,12 @@ public class Corretor {
         return registroCRECI;
     }
 
-    public void setNome(String nome) {
-            this.nome = nome.toUpperCase();
+    public void setNomeCorretor(String nomeCorretor) {
+            this.nomeCorretor = nomeCorretor.toUpperCase();
     }
 
-    public void setIdade(int idade) {
-            this.idade = idade;
+    public void setIdadeCorretor(int idadeCorretor) {
+            this.idadeCorretor = idadeCorretor;
     }
 
     public void setTerminouEnsinoMedio(boolean terminouEnsinoMedio) {
@@ -54,8 +54,8 @@ public class Corretor {
 
     public void mostrarInformacoesCorretor() {
         System.out.println("Dados do Corretor:");
-        System.out.println("Nome: " + nome);
-        System.out.println("Idade: " + idade);
+        System.out.println("Nome: " + nomeCorretor);
+        System.out.println("Idade: " + idadeCorretor);
         System.out.println("Concluiu ensino médio: " + terminouEnsinoMedio);
         System.out.println("Possui diploma TTI: " + diplomaTTI);
         System.out.println("Apresentou registro CRECI: " + registroCRECI);

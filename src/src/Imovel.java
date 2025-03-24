@@ -1,11 +1,11 @@
 public class Imovel {
     private String tipoImovel;
-    private String endereco;
+    private String enderecoImovel;
     private int metrosQuadrados;
 
-    public Imovel(String tipoImovel, String endereco, int metrosQuadrados) {
+    public Imovel(String tipoImovel, String enderecoImovel, int metrosQuadrados) {
         this.tipoImovel = tipoImovel.toUpperCase();
-        this.endereco = endereco.toUpperCase();
+        this.enderecoImovel = enderecoImovel.toUpperCase();
         this.metrosQuadrados = metrosQuadrados;
     }
 
@@ -13,8 +13,8 @@ public class Imovel {
         return tipoImovel;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getEnderecoImovel() {
+        return enderecoImovel;
     }
 
     public int getMetrosQuadrados() {
@@ -25,8 +25,8 @@ public class Imovel {
             this.tipoImovel = tipoImovel.toUpperCase();
     }
 
-    public void setEndereco(String endereco) {
-            this.endereco = endereco.toUpperCase();
+    public void setEnderecoImovel(String endereco) {
+            this.enderecoImovel = enderecoImovel.toUpperCase();
     }
 
     public void setMetrosQuadrados(int metrosQuadrados) {
@@ -35,7 +35,7 @@ public class Imovel {
 
     public void mostrarInformacoesImovel() {
         System.out.println("Tipo do imóvel: " + tipoImovel);
-        System.out.println("Endereço: " + endereco);
+        System.out.println("Endereço: " + enderecoImovel);
         System.out.println("Metros quadrados: " + metrosQuadrados);
     }
 }

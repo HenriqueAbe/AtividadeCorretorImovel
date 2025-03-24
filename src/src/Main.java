@@ -1,3 +1,4 @@
+import java.lang.reflect.GenericDeclaration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -7,6 +8,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         List<Imovel> imoveis = new ArrayList<>();
         List<Corretor> corretores = new ArrayList<>();
+        List<Cliente> clientes = new ArrayList<>();
 
         while (true) {
             System.out.print("Escolha uma das opções: \n 1 - Cadastrar corretor. \n 2 - Cadastras cliente. \n 3 - Cadastrar imóvel. \n 4 - Listar corretor(es). \n 5 - Listar cliente(s).  \n 6 - Listar imóveis. \n 7 - Sair. \n Digite o número: ");
@@ -17,8 +19,8 @@ public class Main {
             switch (escolha) {
                 case 1:
                     System.out.print("Nome: ");
-                    String nome = scanner.nextLine();
-                    if (nome.isEmpty()) {
+                    String nomeCorretor = scanner.nextLine();
+                    if (nomeCorretor.isEmpty()) {
                         System.out.println("Nome inválido.");
                         System.out.println("Para continuar aperte ENTER.");
                         scanner.nextLine();
@@ -26,9 +28,9 @@ public class Main {
                     }
 
                     System.out.print("Idade: ");
-                    int idade = scanner.nextInt();
+                    int idadeCorretor = scanner.nextInt();
                     scanner.nextLine();
-                    if (idade < 18) {
+                    if (idadeCorretor < 18) {
                         System.out.println("Idade mínima é 18 anos.");
                         System.out.println("Para continuar aperte ENTER.");
                         scanner.nextLine();
@@ -63,11 +65,43 @@ public class Main {
                         System.out.println("Para voltar ao menu pressione ENTER.");
                     }
 
-                    Corretor corretorNovo = new Corretor(nome, idade, terminouEnsinoMedio, diplomaTTI, registroCRECI);
+                    Corretor corretorNovo = new Corretor(nomeCorretor, idadeCorretor, terminouEnsinoMedio, diplomaTTI, registroCRECI);
                     corretores.add(corretorNovo);
                     System.out.println("Corretor cadastrado com sucesso!");
                     break;
+
                 case 2:
+                    System.out.print("Nome do cliente: ");
+                    String nomeCliente = scanner.nextLine();
+                    if (nomeCliente.isEmpty()) {
+                        System.out.println("Nome inválido.");
+                        System.out.println("Para continuar aperte ENTER.");
+                        scanner.nextLine();
+                        break;
+                    }
+
+                    System.out.print("Idade do cliente: ");
+                    int idadeCliente = scanner.nextInt();
+                    scanner.nextLine();
+                    if (idadeCliente < 18) {
+                        System.out.println("Idade mínima é 18 anos.");
+                        System.out.println("Para continuar aperte ENTER.");
+                        scanner.nextLine();
+                        break;
+                    }
+
+                    System.out.print("CPF do cliente: ");
+                    double cpf = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.print("Endereço do cliente: ");
+                    String enderecoCliente = scanner.nextLine();
+
+                    System.out.println("Tipo do cliente(Vendedor ou Comprador): ");
+                    String tipoCliente  = scanner.nextLine();
+
+                    Cliente clienteNovo = new Cliente(nomeCliente, idadeCliente, cpf, enderecoCliente, tipoCliente);
+
                     break;
                 case 3:
                     System.out.print("Digite o tipo do imóvel (Apartamento ou Casa): ");
@@ -80,8 +114,8 @@ public class Main {
                     }
 
                     System.out.print("Digite o endereço: ");
-                    String endereco = scanner.nextLine();
-                    if (endereco.isEmpty()) {
+                    String enderecoImovel = scanner.nextLine();
+                    if (enderecoImovel.isEmpty()) {
                         System.out.println("Para cadastrar um ímovel precisa do seu endereço.");
                         System.out.println("Para continuar aperte ENTER.");
                         scanner.nextLine();
@@ -95,7 +129,7 @@ public class Main {
                         scanner.nextLine();
                     }
 
-                    Imovel imovelNovo = new Imovel(tipoImovel, endereco, metrosQuadrados);
+                    Imovel imovelNovo = new Imovel(tipoImovel, enderecoImovel, metrosQuadrados);
                     imoveis.add(imovelNovo);
                     System.out.println("Imóvel cadastrado com sucesso!");
                     break;
