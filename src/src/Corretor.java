@@ -1,16 +1,16 @@
 public class Corretor {
     private String nome;
     private int idade;
-    private String terminouEnsinoMedio;
-    private String diplomaTTI;
-    private String registroCRECI;
+    private boolean terminouEnsinoMedio;
+    private boolean diplomaTTI;
+    private boolean registroCRECI;
 
-    public Corretor(String nome, int idade, String terminouEnsinoMedio, String diplomaTTI, String registroCRECI) {
-        setNome(nome);
-        setIdade(idade);
-        setTerminouEnsinoMedio(terminouEnsinoMedio);
-        setDiplomaTTI(diplomaTTI);
-        setRegistroCRECI(registroCRECI);
+    public Corretor(String nome, int idade, boolean terminouEnsinoMedio, boolean diplomaTTI, boolean registroCRECI) {
+        this.nome = nome;
+        this.idade = idade;
+        this.terminouEnsinoMedio = terminouEnsinoMedio;
+        this.diplomaTTI = diplomaTTI;
+        this.registroCRECI = registroCRECI;
     }
 
     public String getNome() {
@@ -20,15 +20,15 @@ public class Corretor {
     public int getIdade() {
         return idade;
     }
-    public String getTerminouEnsinoMedio() {
+    public boolean getTerminouEnsinoMedio() {
         return terminouEnsinoMedio;
     }
 
-    public String getDiplomaTTI() {
+    public boolean getDiplomaTTI() {
         return diplomaTTI;
     }
 
-    public String getRegistroCRECI() {
+    public boolean getRegistroCRECI() {
         return registroCRECI;
     }
 
@@ -40,16 +40,16 @@ public class Corretor {
             this.idade = idade;
     }
 
-    public void setTerminouEnsinoMedio(String terminouEnsinoMedio) {
-            this.terminouEnsinoMedio = "Sim.";
+    public void setTerminouEnsinoMedio(boolean terminouEnsinoMedio) {
+            this.terminouEnsinoMedio = terminouEnsinoMedio;
     }
 
-    public void setDiplomaTTI(String diplomaTTI) {
-            this.diplomaTTI = "Sim.";
+    public void setDiplomaTTI(boolean diplomaTTI) {
+            this.diplomaTTI = diplomaTTI;
     }
 
-    public void setRegistroCRECI(String registroCRECI) {
-            this.registroCRECI = "Sim.";
+    public void setRegistroCRECI(boolean registroCRECI) {
+            this.registroCRECI = registroCRECI;
     }
 
     public void mostrarInformacoesCorretor() {

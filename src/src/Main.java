@@ -20,11 +20,8 @@ public class Main {
                     String nome = scanner.nextLine();
                     if (nome.isEmpty()) {
                         System.out.println("Nome inválido.");
-                        try {
-                            Thread.sleep(2000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                        System.out.println("Para continuar aperte ENTER.");
+                        scanner.nextLine();
                         break;
                     }
 
@@ -33,48 +30,37 @@ public class Main {
                     scanner.nextLine();
                     if (idade < 18) {
                         System.out.println("Idade mínima é 18 anos.");
-                        try {
-                            Thread.sleep(2000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                        System.out.println("Para continuar aperte ENTER.");
+                        scanner.nextLine();
                         break;
                     }
 
-                    System.out.print("Terminou ensino médio(SIM = s, NÃO = n): ");
-                    String terminouEnsinoMedio = scanner.nextLine().toLowerCase();
-                    if (!terminouEnsinoMedio.equals("s")) {
-                        System.out.println("Precisa do ensino médio para trabalhar como corretor.");
-                        try {
-                            Thread.sleep(2000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                    System.out.print("Terminou ensino médio(Sim ou Não): ");
+                    String terminouEnsinoMedioString = scanner.nextLine().toLowerCase();
+                    boolean terminouEnsinoMedio = terminouEnsinoMedioString.equals("s") || terminouEnsinoMedioString.equals("sim");
+                    if (!terminouEnsinoMedio) {
+                        System.out.println("Precisa ter o esino médio completo para poder ser corretor.");
+                        System.out.println("Para voltar ao menu pressione ENTER.");
+                        scanner.nextLine();
                         break;
                     }
 
-                    System.out.print("Possuí o diploma TTI(SIM = s, NÃO = n): ");
-                    String diplomaTTI = scanner.nextLine().toLowerCase();
-                    if (!diplomaTTI.equals("s")) {
-                        System.out.println("Precisa do diploma TTI para trabalhar como corretor.");
-                        try {
-                            Thread.sleep(2000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                    System.out.print("Possuí o diploma TTI(Sim ou Não): ");
+                    String diplomaTTIString = scanner.nextLine().toLowerCase();
+                    boolean diplomaTTI = diplomaTTIString.equals("s") || diplomaTTIString.equals("sim");
+                    if (!diplomaTTI) {
+                        System.out.println("Diploma TTI é necessário para poder ser corretor.");
+                        System.out.println("Para voltar ao menu pressione ENTER.");
+                        scanner.nextLine();
                         break;
-                    }
+                }
 
-                    System.out.print("Tem o registro CRECI(SIM = s, NÃO = n): ");
-                    String registroCRECI = scanner.nextLine().toLowerCase();
-                    if (!registroCRECI.equals("s")) {
-                        System.out.println("Precisa do registro CRECI para trabalhar como corretor.");
-                        try {
-                            Thread.sleep(2000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        break;
+                    System.out.print("Tem o registro CRECI(Sim ou Não): ");
+                    String registroCRECIString = scanner.nextLine().toLowerCase();
+                    boolean registroCRECI = registroCRECIString.equals("s") || registroCRECIString.equals("sim");
+                    if (!registroCRECI) {
+                        System.out.println("Registro CRECI é necessário para poder ser corretor.");
+                        System.out.println("Para voltar ao menu pressione ENTER.");
                     }
 
                     Corretor corretorNovo = new Corretor(nome, idade, terminouEnsinoMedio, diplomaTTI, registroCRECI);
@@ -88,11 +74,8 @@ public class Main {
                     String tipoImovel = scanner.nextLine();
                     if (tipoImovel.isEmpty()) {
                         System.out.println("Ímovel sem nome não pode ser cadastrado.");
-                        try  {
-                            Thread.sleep(2000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                        System.out.println("Para continuar aperte ENTER.");
+                        scanner.nextLine();
                         break;
                     }
 
@@ -100,23 +83,16 @@ public class Main {
                     String endereco = scanner.nextLine();
                     if (endereco.isEmpty()) {
                         System.out.println("Para cadastrar um ímovel precisa do seu endereço.");
-                        try {
-                            Thread.sleep(2000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                        System.out.println("Para continuar aperte ENTER.");
+                        scanner.nextLine();
                     }
 
                     System.out.print("Digite os metros quadrados: ");
                     int metrosQuadrados = scanner.nextInt();
                     scanner.nextLine();
                     if (metrosQuadrados > 0) {
-                        System.out.println("Área inválida.");
-                        try {
-                            Thread.sleep(2000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                        System.out.println("Para continuar aperte ENTER.");
+                        scanner.nextLine();
                     }
 
                     Imovel imovelNovo = new Imovel(tipoImovel, endereco, metrosQuadrados);
@@ -129,6 +105,8 @@ public class Main {
                         i.mostrarInformacoesCorretor();
                         System.out.println("------------");
                     }
+                    System.out.println("Para voltar ao menu pressione ENTER.");
+                    scanner.nextLine();
                     break;
                 case 5:
                     break;
@@ -138,6 +116,8 @@ public class Main {
                         i.mostrarInformacoesImovel();
                         System.out.println("------------");
                     }
+                    System.out.println("Para voltar ao menu pressione ENTER.");
+                    scanner.nextLine();
                     break;
                 case 7:
                     System.out.println("Saindo do programa.");
