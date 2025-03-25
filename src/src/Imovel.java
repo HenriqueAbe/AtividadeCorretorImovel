@@ -38,5 +38,7 @@ public class Imovel {
         System.out.println("Endereço: " + enderecoImovel);
         System.out.println("Metros quadrados: " + metrosQuadrados);
     }
+
+
 }
 

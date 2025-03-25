@@ -1,16 +1,15 @@
-import java.lang.ref.SoftReference;
 
 public class Cliente {
     private String nomeCliente;
     private int idadeCliente;
-    private double cpf;
+    private String cpfCliente;
     private String enderecoCliente;
     private String tipoCliente;
 
-    public Cliente(String nomeCliente, int idadeCliente, double cpf, String enderecoCliente, String tipoCliente) {
+    public Cliente(String nomeCliente, int idadeCliente, String cpfCliente, String enderecoCliente, String tipoCliente) {
         this.nomeCliente = nomeCliente;
         this.idadeCliente = idadeCliente;
-        this.cpf = cpf;
+        this.cpfCliente = cpfCliente;
         this.enderecoCliente = enderecoCliente;
         this.tipoCliente = tipoCliente;
     }
@@ -23,11 +22,11 @@ public class Cliente {
         return idadeCliente;
     }
 
-    public double getCpf() {
-        return cpf;
+    public String getCpfCliente() {
+        return cpfCliente;
     }
 
-    public String getEndereco() {
+    public String getEnderecoCliente() {
         return enderecoCliente;
     }
 
@@ -35,16 +34,16 @@ public class Cliente {
         return tipoCliente;
     }
 
-    public void setNome(String nome) {
-        this.nomeCliente = nome;
+    public void setNomeCliente(String nomeCliente) {
+        this.nomeCliente = nomeCliente;
     }
 
-    public void setIdade(int idadeCliente) {
+    public void setIdadeCliente(int idadeCliente) {
         this.idadeCliente = idadeCliente;
     }
 
-    public void setCpf(double cpf) {
-        this.cpf = cpf;
+    public void setCpfCliente(String cpfCliente) {
+        this.cpfCliente = cpfCliente;
     }
 
     public void setEnderecoCliente(String enderecoCliente) {
@@ -59,7 +58,7 @@ public class Cliente {
         System.out.println("Dados clientes: ");
         System.out.println("Nome: " + nomeCliente);
         System.out.println("Idade: " + idadeCliente);
-        System.out.println("CPF: " + cpf);
+        System.out.println("CPF: " + cpfCliente);
         System.out.println("Endereço: " + enderecoCliente);
         System.out.println("Tipo de cliente: " + tipoCliente);
     }
